@@ -1,0 +1,11 @@
+{
+  "name": "resjs",
+  "version": "1.0.0",
+  "description": "Deal with breakpoints and resposiveness in JS",
+  "main": "responder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ScrollWorks <ruben@scroll.works> (http://scroll.works)",
+  "license": "ISC"
+}
