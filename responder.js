@@ -16,7 +16,18 @@ class Responder {
             this._bpsMap.set(bpData.name, bp);
             bp.on("enter", ()=>{this._current = bpData.name;}, true);
         });
-        console.log(this._current);
+    }
+
+    getCurrent() {
+        return this._current;
+    }
+
+    on(bpName) {
+        return {
+            enter: (f) => {
+                this._queues = 
+            }
+        }
     }
 }
 
