@@ -2,17 +2,21 @@ import Breakpoint from './lib/breakpoint.js';
 
 class Responder {
     constructor(bps) {
-        this._bps=[];
         this._bpsMap = new Map();
-        Object.keys(bps).forEach((name)=>{
-            let bp = new Breakpoint(name, bps[name]);
-            this._bps.push(bp);
-            this._bps.sort(Breakpoint.sort);
-            this._bpsMap.set(name, bp);
+        this._current = '';
 
+        let sorted = Object.keys(bps).map((name)=>{
+            return {name: name, px: bps[name]};
+        }).sort((a,b)=>{
+            return a.px - b.px
         });
-        console.log(this);
 
+        sorted.forEach((bpData, i) => {
+            let bp = new Breakpoint(bpData.name, sorted[i-1] ? sorted[i-1].px : 0, bpData.px);
+            this._bpsMap.set(bpData.name, bp);
+            bp.on("enter", ()=>{this._current = bpData.name;}, true);
+        });
+        console.log(this._current);
     }
 }
 
