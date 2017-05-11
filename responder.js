@@ -1,9 +1,11 @@
 import Breakpoint from './lib/breakpoint.js';
+import triggers from './lib/triggers.js';
 
 class Responder {
     constructor(bps) {
         this._bpsMap = new Map();
         this._current = '';
+        this._triggers = triggers(this._bpsMap);
 
         let sorted = Object.keys(bps).map((name)=>{
             return {name: name, px: bps[name]};
@@ -22,13 +24,8 @@ class Responder {
         return this._current;
     }
 
-    on(bpName) {
-        return {
-            enter: (f) => {
-                this._queues = 
-            }
-        }
+    on(bpName, event, f) {
+        this._triggers.add(bpName, event, f);
     }
 }
-
 export default Responder;
