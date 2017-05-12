@@ -26,3 +26,6 @@ var R = new Responder({
 R.on('tresci', 'enter', ()=>{
     console.log('entering trescientos from outside');
 });
+R.on('tresci', 'enterNext', ()=>{
+    console.log('entering trescientos once :D');
+});
