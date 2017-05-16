@@ -1,6 +1,6 @@
 import Responder from './../responder.js';
 
-var R = new Responder({
+var R = Responder({
     "cien": 100, 
     "Mnueveci": 1900, 
     "dosci": 200, 
