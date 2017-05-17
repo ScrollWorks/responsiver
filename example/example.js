@@ -29,3 +29,9 @@ R.on('tresci', 'enter', ()=>{
 R.on('tresci', 'enterNext', ()=>{
     console.log('entering trescientos once :D');
 });
+R.on('tresci', 'leave', ()=>{
+    console.log('leaveing trescientos from outside');
+});
+R.on('tresci', 'leaveNext', ()=>{
+    console.log('leaveing trescientos once :D');
+});

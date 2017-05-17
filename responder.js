@@ -1,6 +1,6 @@
 import Breakpoint from './lib/breakpoint.js';
 import triggers from './lib/triggerLists.js';
-import EventTranslator from './lib/eventTranslator.js';
+import EventNames from './lib/eventNames.js';
 
 export default (bpDescriptions) => {
     //construct
@@ -26,8 +26,16 @@ export default (bpDescriptions) => {
             return current;
         },
         on: (bpName, event, f) => {
+            let lowLvlEvent = EventNames.toLow(event);
+            if(current == bpName && lowLvlEvent == "enter") {
+                f();
+                if(event == "enterNext") return;
+            }
             triggers.add(bpName, event, f);
-            makeSureReactingTo(bpName, EventTranslator.toLow(event));
+            makeSureReactingTo(bpName, lowLvlEvent);
+        },
+        enterCurrent: () => {
+            triggers.process(current, "enter");
         }
     }
 
@@ -35,12 +43,14 @@ export default (bpDescriptions) => {
     function makeSureReactingTo(name, lowLvlEvent) {
         let listeningToBp = bpListeners.has(name);
         if(listeningToBp && bpListeners.get(name).has(lowLvlEvent)) return;
+        
         let f = triggers.process.bind(null, name, lowLvlEvent);
-        if(!listeningToBp) {
-            var m = new Map();
-            bpListeners.set(name, m);
-        }
-        m.set(lowLvlEvent, f);
+        
+        if(listeningToBp)
+            bpListeners.get(name).set(lowLvlEvent, f);
+        else
+            bpListeners.set(name, new Map([[lowLvlEvent, f]]));
+
         bpsMap.get(name).on(lowLvlEvent, f);
     }
 }
