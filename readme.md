@@ -4,6 +4,20 @@ Library to make it easy to handle different window widths and changes in between
 
 ## Usage
 
+#### Constructor
+It receives an object where each property represents a breakpoint. 
+The keys are the names, and the values are the maximum width in pixels for the breakpoint.
+
+#### getCurrent()
+Returns the name of the breakpoint that matches the current window size.
+
+#### on(bpName, event, f)
+When the `event` takes places on the `bpName` breakpoint, the function `f` will be called.
+
+#### off(bpName, event, f)
+Stops the function `f` from being called when the `event` takes places on the `bpName` breakpoint.
+
+##Sample
 ```
 var R = Responder({
     "cien": 100, 
@@ -47,14 +61,3 @@ R.on('tresci', 'enterNext', ()=>{
 });
 
 ```
-#### Constructor
-    It receives an object where each property represents a breakpoint. The keys are the names, and the values are the maximum width in pixels for the breakpoint.
-
-#### getCurrent()
-    Returns the name of the breakpoint that matches the current window size.
-
-#### on(bpName, event, f)
-    When the `event` takes places on the `bpName` breakpoint, the function `f` will be called.
-
-#### off(bpName, event, f)
-    Stops the function `f` from being called when the `event` takes places on the `bpName` breakpoint.
