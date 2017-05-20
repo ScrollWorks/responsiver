@@ -33,25 +33,39 @@ export default (bpDescriptions) => {
             }
             triggers.add(bpName, event, f);
             makeSureReactingTo(bpName, lowLvlEvent);
-        },
-        enterCurrent: () => {
-            triggers.process(current, "enter");
-        }
+        } ,
+        off: (bpName, event, f) => {
+            triggers.remove(bpName, event, f);
+            canWeStopReactingTo(bpName, EventNames.toLow(event));
+        }    
     }
 
     //private methods
-    function makeSureReactingTo(name, lowLvlEvent) {
-        let listeningToBp = bpListeners.has(name);
-        if(listeningToBp && bpListeners.get(name).has(lowLvlEvent)) return;
+    function makeSureReactingTo(bpName, lowLvlEvent) {
+        let listeningToBp = bpListeners.has(bpName);
+        if(listeningToBp && bpListeners.get(bpName).has(lowLvlEvent)) return;
         
-        let f = triggers.process.bind(null, name, lowLvlEvent);
+        let f = triggers.process.bind(null, bpName, lowLvlEvent);
         
         if(listeningToBp)
-            bpListeners.get(name).set(lowLvlEvent, f);
+            bpListeners.get(bpName).set(lowLvlEvent, f);
         else
-            bpListeners.set(name, new Map([[lowLvlEvent, f]]));
+            bpListeners.set(bpName, new Map([[lowLvlEvent, f]]));
 
-        bpsMap.get(name).on(lowLvlEvent, f);
+        bpsMap.get(bpName).on(lowLvlEvent, f);
+    }
+
+    function canWeStopReactingTo(bpName, lowLvlEvent) {
+        if(!EventNames.toHigh(lowLvlEvent).some((highLvlEvent) => {
+            return triggers.hasListeners(bpName, highLvlEvent);
+        })
+        && bpListeners.has(bpName)
+        && bpListeners.get(bpName).has(lowLvlEvent)) {
+            bpsMap.get(bpName).off(lowLvlEvent, bpListeners.get(bpName).get(lowLvlEvent));
+            bpListeners.get(bpName).delete(lowLvlEvent);
+            if(!bpListeners.get(bpName).size) 
+                bpListeners.delete(bpName);
+        }
     }
 }
 

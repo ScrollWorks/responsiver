@@ -22,16 +22,26 @@ var R = Responder({
     "Mochoci": 1800, 
     "cuatroci": 400 
 });
+var f1 =  ()=>{
+    console.log('entering f1');
+};
 
-R.on('tresci', 'enter', ()=>{
-    console.log('entering trescientos from outside');
-});
+var f2 =  ()=>{
+    console.log('entering f2');
+};
+
+
+var f3 =  ()=>{
+    console.log('entering f3');
+    
+    R.off('tresci', 'enter', f1);    
+    R.off('mil', 'enter', f3);
+};
+
+R.on('tresci', 'enter', f1);
+R.on('tresci', 'enter', f2);
+R.on('tresci', 'enter', f3);
+R.on('mil', 'enter', f3);
 R.on('tresci', 'enterNext', ()=>{
     console.log('entering trescientos once :D');
-});
-R.on('tresci', 'leave', ()=>{
-    console.log('leaveing trescientos from outside');
-});
-R.on('tresci', 'leaveNext', ()=>{
-    console.log('leaveing trescientos once :D');
 });
