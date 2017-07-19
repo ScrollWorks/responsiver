@@ -25,10 +25,11 @@ Stops the function `f` from being called when the `event` takes places on the `b
 ## BreakPointsDesc
 Object that needs to be passed to the constructor specifying the different breakpoints we want to handle.
 The keys are the names of the breakpoints, and the values are the maximum width in pixels for each. 
-```{
+```
+{
     "mil": 1000, 
     "infinity": Infinity
-    }, 
+}, 
 ```
 
 ## EventName
