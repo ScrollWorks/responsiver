@@ -1,8 +1,8 @@
 ResJS is a library that helps in managing different window widths and changes in between them.
 
-# Usage
+# **Usage**
 
-## Constructor
+## **Constructor**
 It receives a `BreakPointsDesc` object and returns an instance of ResJS.
 ```
 const R = ResJs({
@@ -14,13 +14,13 @@ const R = ResJs({
 ## **getCurrent()**: BreakPointName(string)
 Returns the name of the breakpoint that matches the current window size.
 
-## **on(bpName**: string, **event**: EventName(string), **f**: function)
+## **on(bpName**: string, **event**: EventName(string), **f**: function**)**
 When the `event` takes places on the `bpName` breakpoint, the function `f` will be called.
 
-## **off(bpName**: string, **event**: EventName(string), **f**: function)
+## **off(bpName**: string, **event**: EventName(string), **f**: function**)**
 Stops the function `f` from being called when the `event` takes places on the `bpName` breakpoint.
 
-# Types
+# **Types**
 
 ## BreakPointsDesc
 Object that needs to be passed to the constructor specifying the different breakpoints we want to handle.
@@ -37,7 +37,7 @@ EventName is a string that can only have the following values: `enter`, `enterNe
 ## BreakPointName
 String. It's value will always be the name of one of the properties in the object with the breakpoints passed to the constructor.
 
-#Sample
+# **Sample**
 ```
 var R = ResJs({
     "cien": 100, 
