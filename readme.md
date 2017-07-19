@@ -1,25 +1,45 @@
-# ResJS
+ResJS is a library that helps in managing different window widths and changes in between them.
 
-Library to make it easy to handle different window widths and changes in between them.
+# Usage
 
-## Usage
+## Constructor
+It receives a `BreakPointsDesc` object and returns an instance of ResJS.
+```
+const R = ResJs({
+    "mil": 1000, 
+    "infinity": Infinity
+    });
+```
 
-#### Constructor
-It receives an object where each property represents a breakpoint. 
-The keys are the names, and the values are the maximum width in pixels for the breakpoint.
-
-#### getCurrent()
+## getCurrent(): BreakPointName(string)
 Returns the name of the breakpoint that matches the current window size.
 
-#### on(bpName, event, f)
+## on(bpName: string, event: EventName(string), f: function)
 When the `event` takes places on the `bpName` breakpoint, the function `f` will be called.
 
-#### off(bpName, event, f)
+## off(bpName: string, event: EventName(string), f: function)
 Stops the function `f` from being called when the `event` takes places on the `bpName` breakpoint.
 
-##Sample
+# Types
+
+## `BreakPointsDesc`
+Object that needs to be passed to the constructor specifying the different breakpoints we want to handle.
+The keys are the names of the breakpoints, and the values are the maximum width in pixels for each. 
+```{
+    "mil": 1000, 
+    "infinity": Infinity
+    }, 
 ```
-var R = Responder({
+
+## `EventName`
+EventName is a string that can only have the following values: `enter`, `enterNext`, `leave`, `leaveNext`.
+
+## `BreakPointName`
+String. It's value will always be the name of one of the properties in the object with the breakpoints passed to the constructor.
+
+#Sample
+```
+var R = ResJs({
     "cien": 100, 
     "Mnueveci": 1900, 
     "dosci": 200, 
