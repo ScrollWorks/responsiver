@@ -11,18 +11,18 @@ const R = ResJs({
     });
 ```
 
-## getCurrent(): BreakPointName(string)
+## **getCurrent()**: BreakPointName(string)
 Returns the name of the breakpoint that matches the current window size.
 
-## on(bpName: string, event: EventName(string), f: function)
+## **on(bpName**: string, **event**: EventName(string), **f**: function)
 When the `event` takes places on the `bpName` breakpoint, the function `f` will be called.
 
-## off(bpName: string, event: EventName(string), f: function)
+## **off(bpName**: string, **event**: EventName(string), **f**: function)
 Stops the function `f` from being called when the `event` takes places on the `bpName` breakpoint.
 
 # Types
 
-## `BreakPointsDesc`
+## BreakPointsDesc
 Object that needs to be passed to the constructor specifying the different breakpoints we want to handle.
 The keys are the names of the breakpoints, and the values are the maximum width in pixels for each. 
 ```{
@@ -31,10 +31,10 @@ The keys are the names of the breakpoints, and the values are the maximum width 
     }, 
 ```
 
-## `EventName`
+## EventName
 EventName is a string that can only have the following values: `enter`, `enterNext`, `leave`, `leaveNext`.
 
-## `BreakPointName`
+## BreakPointName
 String. It's value will always be the name of one of the properties in the object with the breakpoints passed to the constructor.
 
 #Sample
