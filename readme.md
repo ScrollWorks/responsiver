@@ -14,10 +14,10 @@ const R = ResJs({
 ## **getCurrent()**: BreakPointName(string)
 Returns the name of the breakpoint that matches the current window size.
 
-## **on(bpName**: string, **event**: EventName(string), **f**: function**)**
+## **on(bpName**: BreakPointName(string), **event**: EventName(string), **f**: function**)**
 When the `event` takes places on the `bpName` breakpoint, the function `f` will be called.
 
-## **off(bpName**: string, **event**: EventName(string), **f**: function**)**
+## **off(bpName**: BreakPointName(string), **event**: EventName(string), **f**: function**)**
 Stops the function `f` from being called when the `event` takes places on the `bpName` breakpoint.
 
 # **Types**
