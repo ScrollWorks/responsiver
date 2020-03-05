@@ -74,7 +74,6 @@ const generateWhenAPI  = (breakPoints, changeListeners, getCurrent) => {
     }, {});
     whenAPI.change = cb => {
         changeListeners.push(cb);
-        cb(getCurrent());
     };
     return whenAPI;
 }
