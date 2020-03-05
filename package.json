@@ -1,6 +1,6 @@
 {
   "name": "@scrollworks/sws-responsiver",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ScrollWorks' own implementation of a JS library that responds to changes in viewport.",
   "main": "index.js",
   "author": "ScrollWorks <ruben@scroll.works> (https://scroll.works)",
