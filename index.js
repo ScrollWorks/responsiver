@@ -45,7 +45,7 @@ export default (bpDescriptions) => {
     }
 }
 
-// If it's a "xxxxNext" event listener, update function to remove itself after running
+// If it's a "xxxxNext" event listener, update function to remove itself before running
 const processEventAndCallbackPair = bp => pair => {
     if (pair.event.indexOf('Next') > -1) {
         const newEvent = pair.event.replace('Next', '');
