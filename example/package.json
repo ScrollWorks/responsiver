@@ -1,0 +1,16 @@
+{
+  "name": "example",
+  "version": "1.0.1",
+  "description": "",
+  "main": "bundle.js",
+  "scripts": {
+    "dev": "webpack-cli --watch --mode development"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-livereload-plugin": "^2.3.0"
+  }
+}
