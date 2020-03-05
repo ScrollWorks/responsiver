@@ -3,14 +3,6 @@
   "version": "1.0.0",
   "description": "ScrollWorks' own implementation of a JS library that responds to changes in viewport.",
   "main": "index.js",
-  "scripts": {
-    "dev": "webpack-cli --watch --mode development"
-  },
   "author": "ScrollWorks <ruben@scroll.works> (https://scroll.works)",
-  "license": "ISC",
-  "devDependencies": {
-    "webpack": "^4.41.6",
-    "webpack-cli": "^3.3.11",
-    "webpack-livereload-plugin": "^2.3.0"
-  }
+  "license": "ISC"
 }
