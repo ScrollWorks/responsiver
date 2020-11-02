@@ -1,8 +1,21 @@
 {
-  "name": "@scrollworks/sws-responsiver",
-  "version": "1.0.3",
-  "description": "ScrollWorks' own implementation of a JS library that responds to changes in viewport.",
-  "main": "index.js",
-  "author": "ScrollWorks <ruben@scroll.works> (https://scroll.works)",
-  "license": "ISC"
+    "name": "@scrollworks/sws-responsiver",
+    "version": "1.0.3",
+    "description": "Javascript library that helps respond to changes in viewport.",
+    "main": "build/index.js",
+    "types": "build/index.d.ts",
+    "files": ["build/**/*"],
+    "author": "ScrollWorks <ruben@scroll.works> (https://scroll.works)",
+    "license": "ISC",
+    "scripts": {
+        "dev": "tsc --watch",
+        "build": "tsc",
+        "prepublish": "tsc"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^4.6.0",
+        "@typescript-eslint/parser": "^4.6.0",
+        "eslint": "^7.12.1",
+        "typescript": "^4.0.3"
+    }
 }
