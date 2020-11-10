@@ -5,10 +5,10 @@ A frontend library that allows you to easily (and efficiently, no listening for 
 
 ### **Example**
 
-Complete, runnable example in [here](/example/index.ts)
+Complete, runnable example in [here](https://github.com/ScrollWorks/sws-responsiver/tree/master/example)
 
 ```
-import responsiverFactory from '@scrollworks/sws-responsiver';
+import responsiverFactory from '@scrollworks/responsiver';
 
 // INSTANCIATE RESPONSIVER, OPTIONALLY PASS LISTENERS
 const responsiver = responsiverFactory([{

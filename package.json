@@ -1,5 +1,5 @@
 {
-    "name": "@scrollworks/sws-responsiver",
+    "name": "@scrollworks/responsiver",
     "version": "2.0.0",
     "description": "Javascript library that helps respond to changes in viewport.",
     "main": "build/index.js",
@@ -7,6 +7,18 @@
     "files": [
         "build/**/*"
     ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ScrollWorks/responsiver"
+    },
+    "keywords": [
+        "frontend",
+        "web",
+        "responsive",
+        "resize",
+        "events"
+    ],
+    "homepage": "https://github.com/ScrollWorks/responsiver#readme",
     "author": "ScrollWorks <ruben@scroll.works> (https://scroll.works)",
     "license": "ISC",
     "scripts": {
