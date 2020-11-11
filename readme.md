@@ -5,7 +5,7 @@ A frontend library that allows you to easily (and efficiently, no listening for 
 
 ### **Example**
 
-Complete, runnable example in [here](https://github.com/ScrollWorks/sws-responsiver/tree/master/example)
+Complete, runnable example in [here](https://github.com/ScrollWorks/sws-responsiver/tree/master/example/index.ts)
 
 ```
 import responsiverFactory from '@scrollworks/responsiver';

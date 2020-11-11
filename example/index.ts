@@ -1,4 +1,4 @@
-import responsiverFactory from '../src/index';
+import responsiverFactory from '@scrollworks/responsiver';
 
 const log = text => document.getElementById('log').innerHTML+=`<li>${text}</li>`;
 
