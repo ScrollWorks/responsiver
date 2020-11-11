@@ -1,4 +1,4 @@
-# sws-responsiver
+# Responsiver
 A frontend library that allows you to easily (and efficiently, no listening for resize events etc.) respond to changes in the viewport's width.
 
 ## **Usage**

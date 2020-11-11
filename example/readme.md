@@ -1,5 +1,7 @@
 ## **How to run**
+- Download code and `cd` into `example` folder.
 - `npm install`
+- `npm install --save @scrollworks/responsiver`
 - `npm run dev`
 - Serve `index.html` file with web server.
 
